@@ -105,3 +105,32 @@ Not every user of the **database system** should have access to **all the data**
 5. **Weak Authentication Mechanisms:** Simple passwords or lack of multi-factor authentication (MFA) make the system vulnerable.
 
 ## View of Data
+
+### Data Abstraction
+
+For the system to be usable, it must retrieve data efficiently. The need for efficiency
+has led designers to use complex data structures to represent data in the database.
+Since many database-system users are not computer trained, developers hide the
+complexity from users through several levels of abstraction, to simplify users’
+interactions with the system:
+
+**Physical level:** The Physical Level is the lowest level of abstraction in a database system. It defines how data is physically stored in memory (hard drives, SSDs, RAM) and what data structures are used for storage and retrieval.
+
+**Logical level:** The logical level is the middle layer of abstraction in a database. It describes what data is stored and how different pieces of data relate to each other, but hides the details of how the data is physically stored.
+
+**View level:** The highest level of abstraction describes only part of the entire
+database. Even though the logical level uses simpler structures, complexity
+remains because of the variety of information stored in a large database.
+Many users of the database system do not need all this information; instead,
+they need to access only a part of the database. The view level of abstraction
+exists to simplify their interaction with the system. The system may provide
+many views for the same database.
+
+### Instances and Schemas
+
+Databases are dynamic—they evolve as data is inserted, updated, or deleted. The concepts of instances and schemas help in understanding how data is stored and structured at different points in time.
+Database systems have several schemas, partitioned according to the levels
+of abstraction. The physical schema describes the database design at the physical
+level, while the logical schema describes the database design at the logical level.
+A database may also have several schemas at the view level, sometimes called
+subschemas, that describe different views of the database.
